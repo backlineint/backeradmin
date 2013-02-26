@@ -1,11 +1,11 @@
 # Create your views here.
 from django.contrib import auth
-#from django.contrib.auth.views import login
+from django.contrib.auth.views import login
 from django.http import HttpResponseRedirect, HttpResponse
 
 def custom_login(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect("/myaccount")
+        return HttpResponseRedirect("/myaccount/")
     else:
         return login(request)
 
