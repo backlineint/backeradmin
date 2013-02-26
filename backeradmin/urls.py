@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'backeradmin/login.html'}),
+    #url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'backeradmin/login.html'}),
+    url(r'^accounts/login/$', custom_login),
     url(r'^handler/$', 'redirecthandler.views.handler'),
 )
