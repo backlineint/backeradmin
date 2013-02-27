@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     #url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'backeradmin/login.html'}),
     url(r'^login/$', 'myaccount.views.custom_login', name='login'),
     url(r'^handler/$', 'myaccount.views.handler'),
+    url(r'^entitlements/$', 'entitlements.views.get_entitlements'),
 )
