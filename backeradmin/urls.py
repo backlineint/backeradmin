@@ -18,4 +18,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'myaccount.views.custom_login', name='login'),
     url(r'^handler/$', 'myaccount.views.handler'),
     url(r'^entitlements/$', 'entitlements.views.get_entitlements'),
+    url(r'^myaccount/$', 'myaccount.views.myaccount'),
+    url(r'^logout/$', 'myaccount.views.custom_logout'),
+    url(r'^close/$', 'myaccount.views.close', name='close'),
 )

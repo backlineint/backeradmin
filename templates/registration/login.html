@@ -29,5 +29,11 @@
 <input type="hidden" name="next" value="/handler/{{ request.session.session_key }}" />
 </form>
 
+<form method="get" action="{% url 'close' %}">
+<button type="submit" name="close" value="close">Close</button>
+</form>
+
+<!--<a href = "/close/">Close</a>-->
+
 </body>
 </html>
