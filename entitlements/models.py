@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+#from django.core.serializers.python import Serializer
 
 class Issue(models.Model):
     issue_id = models.IntegerField()
