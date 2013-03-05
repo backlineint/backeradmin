@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from entitlements.models import Entitlement, Issue
 from django.utils import simplejson
 from django.contrib.sessions.models import Session
@@ -8,7 +8,9 @@ from array import *
 def get_entitlements(request):
 	# TODO: Test for shared secret
 	# Parse the API Key from the URL
-	#api_key = request.GET.get('api_key')
+	api_key = request.GET.get('api_key')
+	if api_key != '1':
+		raise Http404
 	# Parse the session token from the URL
 	session_key = request.GET.get('session_token')
 	# Grab the session object for this session token and derive the username
