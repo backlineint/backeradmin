@@ -25,7 +25,11 @@ def handler(request):
         return HttpResponse('Error: session token is not valid')
 
 def myaccount(request):
-    return render(request, 'myaccount/myaccount.html')
+    if request.user.is_authenticated():
+        #return HttpResponseRedirect("/myaccount/")
+        return render(request, 'myaccount/myaccount.html')
+    else:
+        return login(request)
 
 def custom_logout(request):
     logout(request)
