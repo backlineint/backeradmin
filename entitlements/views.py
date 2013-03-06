@@ -25,7 +25,7 @@ def get_entitlements(request):
 	# Assemble the json response
     	to_json = {
         	"username": str(username),
-		"issue": issue_id.tolist()
+		"entitlements": issue_id.tolist()
 		#"session_token": str(session_key)
     	}
 	return HttpResponse(simplejson.dumps(to_json), content_type='application/json')
