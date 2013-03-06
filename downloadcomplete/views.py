@@ -1,5 +1,8 @@
 from django.http import HttpResponse, Http404
 from django.utils import simplejson
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 
 def download_complete(request):
         # Parse the API Key from the URL
