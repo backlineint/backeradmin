@@ -12,6 +12,9 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
+<h3>Login to your Paperweight Magazine Account</h3>
+<p>This is primarily used to provide access to our Kickstarter backers.  If you aren't a Kickstarter backer, you may purchase an issue or subscription in the store.  We still love you.</p>
+
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
 <table>
@@ -25,9 +28,11 @@
 </tr>
 </table>
 
-<input type="submit" value="login" />
+<input type="submit" value="Login" />
 <input type="hidden" name="next" value="/handler/{{ request.session.session_key }}" />
 </form>
+
+<p>Problems?  Email <a href = "mailto:support@paperwieghtmagazine.com">support@paperweightmagazine.com</a></p>
 
 <form method="get" action="{% url 'close' %}">
 <button type="submit" name="close" value="close">Close</button>
