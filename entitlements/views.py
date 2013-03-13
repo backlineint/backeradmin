@@ -4,12 +4,13 @@ from django.utils import simplejson
 from django.contrib.sessions.models import Session
 from django.contrib.auth.models import User
 from array import *
+from django.conf import settings
 
 def get_entitlements(request):
 	# TODO: Test for shared secret
 	# Parse the API Key from the URL
 	api_key = request.GET.get('api_key')
-	if api_key != '1':
+	if api_key != settings.API_KEY:
 		raise Http404
 	# Parse the session token from the URL
 	session_key = request.GET.get('session_token')
@@ -26,7 +27,6 @@ def get_entitlements(request):
     	to_json = {
         	"username": str(username),
 		"entitlements": issue_id.tolist()
-		#"session_token": str(session_key)
     	}
 	return HttpResponse(simplejson.dumps(to_json), content_type='application/json')
 

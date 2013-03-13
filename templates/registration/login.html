@@ -2,6 +2,10 @@
 <html>
 <head>
 <title>Paperweight Account Login</title>
+<style>
+html {width:320px;}
+</style>
+<meta name="viewport" content="initial-scale = 1">
 </head>
 
 <body>
@@ -12,8 +16,8 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<h3>Login to your Paperweight Magazine Account</h3>
-<p>This is primarily used to provide access to our Kickstarter backers.  If you aren't a Kickstarter backer, you may purchase an issue or subscription in the store.  We still love you.</p>
+<h2>Login to your Paperweight Magazine Account</h2>
+<p>This is primarily used to provide access to our Kickstarter backers.  If you aren't a Kickstarter backer, you may purchase a subscription in the store.  We still love you.</p>
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}

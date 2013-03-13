@@ -2,6 +2,10 @@
 <html>
 <head>
 <title>Your Paperweight Magazine Account</title>
+<style>
+html {width:320px;}
+</style>
+<meta name="viewport" content="initial-scale = 1">
 </head>
 
 <body>
@@ -10,7 +14,7 @@
 
 {% csrf_token %}
 
-<h1>Your Paperweight Magazine Account</h1>
+<h2>Your Paperweight Magazine Account</h2>
 
 <p>You are currently signed in as: {{ user.username }}</p>
 
