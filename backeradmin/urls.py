@@ -19,8 +19,10 @@ urlpatterns = patterns('',
     url(r'^handler/$', 'myaccount.views.handler'),
     url(r'^entitlements/$', 'entitlements.views.get_entitlements'),
     url(r'^myaccount/$', 'myaccount.views.myaccount'),
+    url(r'^myaccount_changed/$', 'myaccount.views.myaccount_changed'),
     url(r'^logout/$', 'myaccount.views.custom_logout'),
     url(r'^close/$', 'myaccount.views.close', name='close'),
     url(r'^publishissue/$', 'publishissue.views.publish_issue'),
     url(r'^downloadcomplete/$', 'downloadcomplete.views.download_complete'),
+    url(r'^change/$', 'django.contrib.auth.views.password_change', {'post_change_redirect': '/myaccount_changed', 'template_name': 'registration/change.html'})
 )

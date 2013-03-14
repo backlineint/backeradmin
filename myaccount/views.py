@@ -13,23 +13,24 @@ def custom_login(request):
 def handler(request):
     session_token = request.session._session_key
     if request.user.is_authenticated():
-        #return HttpResponse('%s is logged in' % session_token)
-        #return HttpResponseRedirect("magplus://myaccountview/login/%s" % session_token)
-        #return HttpResponseRedirect("/login/%s" % session_token)
         response = HttpResponse("", status=302)
         response['Location'] = "magplus://myaccountview/login/%s" % session_token
-        #response['Location'] = "magplus://myaccountview/login/"
         return response
     else:
-        #return HttpResponse('%s is not logged in' % session_token)
         return HttpResponse('Error: session token is not valid')
 
 def myaccount(request):
     if request.user.is_authenticated():
-        #return HttpResponseRedirect("/myaccount/")
         return render(request, 'myaccount/myaccount.html')
     else:
         return login(request)
+
+def myaccount_changed(request):
+    if request.user.is_authenticated():
+        return render(request, 'myaccount/myaccount_changed.html')
+    else:
+        return login(request)
+
 
 def custom_logout(request):
     logout(request)

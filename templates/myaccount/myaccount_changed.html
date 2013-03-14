@@ -3,10 +3,9 @@
 <head>
 <title>Your Paperweight Magazine Account</title>
 <style>
-html {width:320px; font-family: 'Open Sans', sans-serif;}
+html {width:320px;}
 </style>
 <meta name="viewport" content="initial-scale = 1">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -16,6 +15,8 @@ html {width:320px; font-family: 'Open Sans', sans-serif;}
 {% csrf_token %}
 
 <h2>Your Paperweight Magazine Account</h2>
+
+<p><em>Your account information has been updated</em></p>
 
 <p>You are currently signed in as: {{ user.username }}</p>
 

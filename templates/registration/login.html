@@ -3,9 +3,11 @@
 <head>
 <title>Paperweight Account Login</title>
 <style>
-html {width:320px;}
+html { width:320px; margin-left: auto; margin-right: auto; font-family: 'Open Sans', sans-serif;}
+h2, a { color: lightskyblue; }
 </style>
 <meta name="viewport" content="initial-scale = 1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -17,6 +19,7 @@ html {width:320px;}
 {% endif %}
 
 <h2>Login to your Paperweight Magazine Account</h2>
+
 <p>This is primarily used to provide access to our Kickstarter backers.  If you aren't a Kickstarter backer, you may purchase a subscription in the store.  We still love you.</p>
 
 <form method="post" action="{% url 'login' %}">
