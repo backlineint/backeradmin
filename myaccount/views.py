@@ -43,3 +43,6 @@ def close(request):
     response = HttpResponse("", status=302)
     response['Location'] = "magplus://myaccountview/close/"
     return response
+
+def catch_all(request):
+    return HttpResponse("Page does not exist.  For support contact support@paperweightmagazine.com")
